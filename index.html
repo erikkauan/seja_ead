@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/style.css" rel="stylesheet" >
+    <link href="./styles/fonts.css" rel="stylesheet" >
+    <link href="./styles/media.css" rel="stylesheet" >
+    <title>Seja EaD</title>
+
+</head>
+<body>
+    <header>
+        <div id="title">
+            <h1>Seja</h1>
+            <h1>EaD</h1>
+        </div>
+
+        <ul>
+            <a href="https://e5g.com.br/admin/" target="_blank" id="button"><li>Conheça nosso site</li></a>
+        </ul>
+    </header>
+
+    <main>
+        <aside>
+            <h2><span>Inscreva-se agora</span></h2>
+            <h2>e venha estudar conosco</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
+            </p>
+            <form action="" id="formulario">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+
+                <div class="checkbox-group">
+                    <p>Escolha suas opções:</p>
+                    <label><input type="checkbox" name="opcoes[]" value="opcao1">Ensino Fundamental</label>
+                    <label><input type="checkbox" name="opcoes[]" value="opcao2"> Ensino Médio</label>
+                    <label><input type="checkbox" name="opcoes[]" value="opcao3"> Ensino Fundamental e Médio</label>
+                </div>
+
+                <input type="number" id="ddd" placeholder="DDD" required>
+                <input type="number" id="fone" placeholder="Fone" required>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="opcoes[]" value="opcao1" required>Autorizo que a empresa entre em contato via WhatsApp.</label>
+                </div>
+
+                <input type="submit" value="Enviar >">
+            </form>
+        </aside>
+
+        <article>
+            <img src="./components/images/imagem_novo" alt="mulher-roxa">
+        </article>
+    </main>
+
+    <!-- Modal de sucesso -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Formulário enviado com sucesso! Agradecemos pela sua inscrição.</p>
+        </div>
+    </div>
+
+    <script>
+        // Aguardar o envio do formulário
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+            let formularioValido = true;
+            let inputs = document.querySelectorAll("input[required]");
+
+            // Verificar campos obrigatórios
+            inputs.forEach(function(input) {
+                if (!input.value && input.type !== "checkbox") {
+                    input.setCustomValidity("Por favor, preencha este campo.");
+                    formularioValido = false;
+                } else {
+                    input.setCustomValidity(""); // Limpar a mensagem de erro
+                }
+
+                // Validação para checkbox
+                if (input.type === "checkbox" && !input.checked) {
+                    input.setCustomValidity("Você deve aceitar a autorização para contato.");
+                    formularioValido = false;
+                } else if (input.type === "checkbox" && input.checked) {
+                    input.setCustomValidity(""); // Limpar mensagem de erro
+                }
+            });
+
+            if (!formularioValido) {
+                event.preventDefault(); // Impedir o envio do formulário
+            } else {
+                event.preventDefault(); // Previne o envio real para simular sucesso (pode ser removido se o formulário for enviado para um servidor)
+                
+                // Exibe o modal de sucesso
+                var modal = document.getElementById("myModal");
+                modal.style.display = "block";
+
+                // Fechar o modal quando o usuário clicar no 'X'
+                var span = document.getElementsByClassName("close")[0];
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Opcional: Fechar o modal automaticamente após 5 segundos e recarregar a página
+                setTimeout(function() {
+                    modal.style.display = "none";
+                    location.reload(); // Recarrega a página
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>
