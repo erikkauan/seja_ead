@@ -175,3 +175,28 @@ input{
     text-decoration: none;
 }
 
+/* Botão flutuante do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0,3);
+    border: none;
+}
+
+.whatsapp-button i {
+    font-size: 35px;
+    color: white;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
