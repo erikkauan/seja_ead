@@ -9,14 +9,19 @@ body{
 
 header{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
 #title{
-    flex-direction: column;
-    line-height: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#title img{
+    width: 300px;
+    height: auto;
 }
 
 li{
@@ -34,6 +39,8 @@ a:hover{
 }
 
 #button{
+    text-align: center;
+    margin: 0;
     border: 2px solid rgb(255, 102, 0);
     padding: 10px;
     border-radius: 15px;
@@ -199,4 +206,3 @@ input{
 .whatsapp-button:hover {
     transform: scale(1.1);
 }
-
