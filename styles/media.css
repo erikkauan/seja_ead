@@ -16,10 +16,6 @@
             width: 100%;
         }
 
-        input{
-            align-self: center;
-        }
-
         img{
             width: 100%; /* Faz a imagem ocupar toda a largura da tela */
             max-width: 300px; /* Define um tamanho máximo para evitar distorção */
