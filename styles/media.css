@@ -1,30 +1,33 @@
-@media screen and (max-width: 760px){
-    header{
-        flex-direction: column;
-    }
+    @media screen and (max-width: 760px){
+        header{
+            flex-direction: column;
+        }
 
-    main{
-        flex-direction: column;
-    }
+        main{
+            flex-direction: column;
+        }
 
-    h2{
-        font-size: 38px;
-    }
+        h2{
+            font-size: 38px;
+        }
 
-    form{
-        margin: 0 auto;
-        width: 100%;
-    }
+        form{
+            margin: 0 auto;
+            width: 100%;
+        }
 
-    input{
-        align-self: center;
-    }
+        input{
+            align-self: center;
+        }
 
-    img{
-        display: none;
-    }
+        img{
+            width: 100%; /* Faz a imagem ocupar toda a largura da tela */
+            max-width: 300px; /* Define um tamanho máximo para evitar distorção */
+            margin: 20px auto; /* Centraliza a imagem */
+            display: block;
+        }
 
-    ul{
-        text-align: center;
+        ul{
+            text-align: center;
+        }
     }
-}
