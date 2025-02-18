@@ -21,7 +21,7 @@
     }
 
     main{
-        flex-direction: column;
+        flex-direction: column; /* Altera para coluna para empilhar os elementos */
         margin-top: 20px;
     }
 
@@ -39,5 +39,13 @@
         max-width: 300px; /* Define um tamanho máximo para evitar distorção */
         margin: 20px auto; /* Centraliza a imagem */
         display: block;
+    }
+
+    article {
+        order: 1; /* Garante que a imagem venha primeiro */
+    }
+
+    aside {
+        order: 2; /* Garante que o formulário venha depois da imagem */
     }
 }
