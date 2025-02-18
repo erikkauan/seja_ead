@@ -11,9 +11,9 @@
         align-items: center; /* Garante que o texto e o logo fiquem alinhados */
     }
 
-    #title img{
-        max-width: 150px;
-        margin-right: 10px; /* Espaço entre a imagem e o texto */
+    #title img {
+        left: 0; /* Ajuste para garantir que a logo fique visível */
+        width: 200px; /* Reduz o tamanho da logo, se necessário */
     }
 
     h1{
