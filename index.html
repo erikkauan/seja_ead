@@ -106,7 +106,7 @@
                 let whatsapp = document.querySelector('input[name="opcoes[]"]:checked') ? "Sim" : "Não";
 
                 // Cria a URL para o WhatsApp com os dados
-                let mensagem = `Olá, tenho interesse em realizar a minha matrícula. Seguem os dados abaixo:\n\nNome: ${nome}\nE-mail: ${email}\nDDD: ${ddd}\nFone: ${fone}\nAutorização WhatsApp: ${whatsapp}`;
+                let mensagem = `Olá, tenho interesse em realizar a minha matrícula. Seguem os dados abaixo:\n\nNome: ${nome}\nE-mail: ${email}\nDDD: ${ddd}\nFone: ${fone}`;
                 let whatsappLink = `https://wa.me/5543998681288?text=${encodeURIComponent(mensagem)}`;
 
                 // Redireciona para o WhatsApp com a mensagem personalizada
