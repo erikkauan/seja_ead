@@ -1,4 +1,4 @@
-@media screen and (max-width: 760px){
+@media screen and (max-width: 760px) {
     header{
         flex-direction: row; /* Alinha o conteúdo lado a lado */
         justify-content: space-between; /* Espaçamento entre o título e o botão */
@@ -13,7 +13,7 @@
 
     #title img {
         left: 0; /* Ajuste para garantir que a logo fique visível */
-        width: 200px; /* Reduz o tamanho da logo, se necessário */
+        width: 180px; /* Reduz um pouco mais o tamanho da logo */
     }
 
     h1{
@@ -23,15 +23,28 @@
     ul{
         margin: 0;
         text-align: center; /* Centraliza o botão */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        max-width: 100%; /* Garante que o contêiner do botão não ultrapasse a tela */
+        padding: 0 10px; /* Adiciona um pequeno padding para evitar o corte do botão */
     }
 
     #button{
-        padding: 10px 15px; /* Ajusta o tamanho do botão */
-        font-size: 16px; /* Ajusta o tamanho da fonte */
+        padding: 10px; /* Ajusta o tamanho do botão */
+        font-size: 14px; /* Reduz um pouco o tamanho do texto */
         border-radius: 20px; /* Arredonda os cantos */
-        width: auto; /* Ajusta a largura do botão */
+        width: 100%; /* Garante que o botão ocupe o espaço disponível */
+        max-width: 250px; /* Limita a largura do botão */
         text-align: center;
-        margin-left: 10px; /* Espaço entre o título e o botão */
+        white-space: nowrap; /* Evita que o texto quebre para outra linha */
+        overflow: hidden; /* Impede que o texto ultrapasse a borda */
+        text-overflow: ellipsis; /* Adiciona "..." caso o texto seja muito grande */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; /* Centraliza o botão */
+        box-sizing: border-box; /* Inclui padding e borda nas dimensões totais */
     }
 
     #button li{
