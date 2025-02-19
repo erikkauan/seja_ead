@@ -1,88 +1,81 @@
 @media screen and (max-width: 760px) {
-    header{
-        flex-direction: row; /* Alinha o conteúdo lado a lado */
-        justify-content: space-between; /* Espaçamento entre o título e o botão */
-        align-items: center;
-        padding: 10px;
+    /* Header: Ajuste para o mobile */
+    header {
+        flex-direction: column; /* Alinha os itens em coluna no mobile */
+        align-items: center; /* Centraliza os itens */
+        padding: 20px 10px; /* Ajusta o padding */
     }
 
-    #title{
+    #title {
         display: flex;
-        align-items: center; /* Garante que o texto e o logo fiquem alinhados */
+        justify-content: center; /* Centraliza a logo */
+        margin-bottom: 15px; /* Espaço entre logo e botão */
     }
 
     #title img {
-        left: 0; /* Ajuste para garantir que a logo fique visível */
-        width: 180px; /* Reduz um pouco mais o tamanho da logo */
-    }
-
-    h1{
-        font-size: 24px; /* Ajusta o tamanho do texto */
-    }
-
-    ul{
+        width: 270px; /* Ajuste o tamanho da logo */
+        height: auto;
         margin: 0;
-        text-align: center; /* Centraliza o botão */
+        left: 0; /* Ajuste para garantir que a logo fique visível */
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Centraliza o botão */
         width: 100%;
-        display: flex;
-        justify-content: center;
-        max-width: 100%; /* Garante que o contêiner do botão não ultrapasse a tela */
-        padding: 0 10px; /* Adiciona um pequeno padding para evitar o corte do botão */
     }
 
-    #button{
-        padding: 10px; /* Ajusta o tamanho do botão */
-        font-size: 14px; /* Reduz um pouco o tamanho do texto */
-        border-radius: 20px; /* Arredonda os cantos */
-        width: 100%; /* Garante que o botão ocupe o espaço disponível */
-        max-width: 250px; /* Limita a largura do botão */
+    #button {
+        width: 70%; /* Faz o botão ocupar 100% da largura */
+        max-width: 250px; /* Limita a largura máxima do botão */
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 20px;
         text-align: center;
-        white-space: nowrap; /* Evita que o texto quebre para outra linha */
-        overflow: hidden; /* Impede que o texto ultrapasse a borda */
-        text-overflow: ellipsis; /* Adiciona "..." caso o texto seja muito grande */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto; /* Centraliza o botão */
-        box-sizing: border-box; /* Inclui padding e borda nas dimensões totais */
+        white-space: nowrap;
+        margin-top: 10px; /* Adiciona espaçamento entre a logo e o botão */
     }
 
-    #button li{
+    #button li {
         display: inline-block;
         margin: 0;
     }
 
-    #button:hover{
-        background-color: rgb(255, 102, 0);
-        color: white;
+    /* Ajuste no formulário */
+    form {
+        margin: 0 auto;
+        width: 100%; /* Mantém o formulário ocupando toda a largura */
     }
 
-    main{
-        flex-direction: column; /* Mantém o layout em coluna no mobile */
+    /* Ajuste da imagem no main para não alterar o seu posicionamento */
+    img {
+        width: 100%; /* Ajuste o tamanho da imagem para ocupar 100% da largura */
+        max-width: 350px; /* Define o tamanho máximo da imagem */
+        margin-left: 0; /* Remove a margem à esquerda da imagem */
+        margin-top: 30px; /* Ajuste a margem superior */
+        display: block;
+        margin: 30px auto; /* Centraliza a imagem */
+    }
+
+    /* Ajustes no layout principal */
+    main {
+        flex-direction: column; /* Muda para coluna no mobile */
         margin-top: 20px;
     }
 
-    h2{
+    /* Fontes ajustadas */
+    h2 {
         font-size: 28px;
     }
 
-    form{
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    img{
-        width: 100%;
-        max-width: 300px;
-        margin: 20px auto;
-        display: block;
-    }
-
+    /* Alteração na ordem dos elementos */
     article {
-        order: 1;
+        order: 1; /* Garante que a imagem fique abaixo do formulário */
     }
 
     aside {
-        order: 2;
+        order: 2; /* Coloca o formulário acima da imagem */
     }
 }
