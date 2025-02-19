@@ -65,6 +65,10 @@
         margin-top: 20px;
     }
 
+    p {
+        font-size: 25px;
+    }
+
     /* Fontes ajustadas */
     h2 {
         font-size: 28px;
