@@ -8,12 +8,11 @@
     <link href="./styles/media.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <title>Seja EaD</title>
-
 </head>
 <body>
     <header>
         <div id="title">
-            <img src="components/images/logo.jpg" alt="Logo da Seja EaD">
+            <img src="components/images/seja_ead.png" alt="Logo da Seja EaD">
            <!-- <h1>Seja EaD</h1> --> 
         </div>
 
@@ -31,7 +30,7 @@
                 Certificado (diploma) reconhecido pela Secretaria de Educação (SEED/PR) 
                 e válido para todo o território nacional!
             </p>
-            <form action="" id="formulario">
+            <form id="formulario">
                 <input type="text" id="nome" placeholder="Nome" required>
                 <input type="email" id="email" placeholder="E-mail" required>
 
@@ -72,7 +71,6 @@
     </a> 
 
     <script>
-        // Aguardar o envio do formulário
         document.getElementById("formulario").addEventListener("submit", function(event) {
             let formularioValido = true;
             let inputs = document.querySelectorAll("input[required]");
@@ -98,23 +96,21 @@
             if (!formularioValido) {
                 event.preventDefault(); // Impedir o envio do formulário
             } else {
-                event.preventDefault(); // Previne o envio real para simular sucesso (pode ser removido se o formulário for enviado para um servidor)
-                
-                // Exibe o modal de sucesso
-                var modal = document.getElementById("myModal");
-                modal.style.display = "block";
+                event.preventDefault(); // Previne o envio real para simular sucesso
 
-                // Fechar o modal quando o usuário clicar no 'X'
-                var span = document.getElementsByClassName("close")[0];
-                span.onclick = function() {
-                    modal.style.display = "none";
-                }
+                // Coleta os dados do formulário
+                let nome = document.getElementById("nome").value;
+                let email = document.getElementById("email").value;
+                let ddd = document.getElementById("ddd").value;
+                let fone = document.getElementById("fone").value;
+                let whatsapp = document.querySelector('input[name="opcoes[]"]:checked') ? "Sim" : "Não";
 
-                // Opcional: Fechar o modal automaticamente após 5 segundos e recarregar a página
-                setTimeout(function() {
-                    modal.style.display = "none";
-                    location.reload(); // Recarrega a página
-                }, 1500);
+                // Cria a URL para o WhatsApp com os dados
+                let mensagem = `Olá, tenho interesse em realizar a minha matrícula. Seguem os dados abaixo:\n\nNome: ${nome}\nE-mail: ${email}\nDDD: ${ddd}\nFone: ${fone}\nAutorização WhatsApp: ${whatsapp}`;
+                let whatsappLink = `https://wa.me/5543998681288?text=${encodeURIComponent(mensagem)}`;
+
+                // Redireciona para o WhatsApp com a mensagem personalizada
+                window.location.href = whatsappLink;
             }
         });
     </script>
